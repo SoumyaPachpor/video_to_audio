@@ -68,6 +68,10 @@ def download_audio(video_url, output_folder="downloads"):
         download_status[video_url]['status'] = 'error'
         download_status[video_url]['error'] = str(e)
 
+@app.route('/')
+def home():
+    return "Backend is live and working!"
+
 @app.route('/api/download', methods=['POST'])
 def download():
     data = request.get_json()
